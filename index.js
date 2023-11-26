@@ -699,7 +699,10 @@ window.webRef.getRef = (function () {
 			resizable: 'resizable',
 			css: {width: '100%', position: 'absolute', zIndex: '2147483647', top: 0, left: 0}
 		});
-		document.body.insertBefore(refFrame.frame, document.body.firstChild);
+		// NOTE: If we insert at the *start* of the document, existing absolutely positioned DOM elements with
+		// the same z-index: -1 will be painted over our UI, as later elements are painted over earlier ones,
+		// as is the case with the archive.org snapshot selector UI.
+		document.body.appendChild(refFrame.frame);
 		refFrame.win = (refFrame.frame.contentWindow || refFrame.frame);
 		refFrame.doc = (refFrame.win.document || refFrame.win.contentDocument);
 		refFrame.doc.open();
