@@ -12,6 +12,7 @@ window.webRef.getRef = (function () {
 
 	var webRefSetupJsUrl = '//en.wikipedia.org/w/index.php?title='
 			+ 'User:V111P/js/webRefSetup.js&action=raw&ctype=text/javascript&smaxage=0&maxage=0';
+	webRefSetupJsUrl = 'https://raw.githubusercontent.com/mqudsi/webref/master/index.js';
 	var helpUrl = '//en.wikipedia.org/wiki/User:V111P/js/WebRef';  // LOCALIZE
 
 	// Names/abbriviations of the months in the languages of the
